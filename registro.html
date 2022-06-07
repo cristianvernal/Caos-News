@@ -9,7 +9,8 @@
     <link href="styleCss/Style.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="iconos/news.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+    <script src="https://parsleyjs.org/dist/parsley.js"></script>
+    <script src="JS/es.js"></script>
     <title>Registro</title>
   </head>
 
@@ -71,38 +72,40 @@
 
 <div class="div container-fluid mt-3 my-5 col-md-7 bg-white rounded shadow-lg ">
     <h1 class="text-center m-5 p-5 rounded-end">REGISTRO</h1>
-    <form action="" class="row g-2">
+    <form action="" class="row g-2" id="validate_form">
     <div class="col-md-6">
-        <label for="Nombre" class="form-label">Nombres:</label>
-        <input type="text" class="form-control" id="nombre" required="">
+        <label for="Nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" required data-parsley-pattern="^[a-zA-Z]+$" data-parsley-minlength="[3]" data-parsley-trigger="keyup">
+        <!--que solo sean letras mayusculas o minusculas-->
     </div>
     <div class="col-md-6">
-        <label for="apellido" class="form-label">Apellidos:</label>
-        <input type="text" class="form-control" id="apellido" required="">
+        <label for="apellido" class="form-label">Apellido:</label>
+        <input type="text" class="form-control" id="apellido" placeholder="Ingrese Apellido" required data-parsley-pattern="^[a-zA-Z]+$" data-parsley-minlength="[3]" data-parsley-trigger="keyup">
     </div>
     
     <div class="col-md-4">
         <label for="emailInfo" class="form-label">Correo:</label>
-        <input type="email" class="form-control" id="emailInfo" required="">
+        <input type="email" class="form-control" id="emailInfo" placeholder="Ingrese correo" required data-parsley-type="email" data-parsley-trigger="keyup">
     </div>
     <div class="col-md-4">
         <label for="numerocelular" class="form-label">Número Teléfono:</label>
-        <input type="text" class="form-control" id="numerocelular" placeholder="+569">
+        <input type="text" class="form-control" id="numerocelular" placeholder="+569" data-parsley-type="number">
     </div>
     <div class="col-md-4">
       <label for="Rut" class="form-label">Rut:</label>
-      <input type="text" class="form-control" id="Rut" required="">
+      <input type="text" class="form-control" id="Rut" placeholder="Ingrese rut">
   </div>
     <div class="col-md-4">
         <label for="Contraseña" class="form-label">Contraseña:</label>
-        <input type="password" class="form-control" id="Contraseña" required="">
+        <input type="password" class="form-control" id="Contraseña" required data-parsley-length="[8,16]" data-parsley-trigger="keyup">
     </div>
     <div class="col-md-4">
         <label for="confirmacion" class="form-label">Confirmar Contraseña:</label>
-        <input type="password" class="form-control" id="confirmacion" required="">
+        <input type="password" class="form-control" id="confirmacion" required data-parsley-equalto="#Contraseña" data-parsley-trigger="keyup">
     </div>
     <div class="col-md-12 mb-4 text-end">
         <button type="submit" class="btn btn-dark">Agregar Usuario</button>
+        <button type="reset" class="btn btn-dark">Limpiar</button>
     </div>
 </form>
 </div>
@@ -182,7 +185,7 @@
     </div>
   </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
@@ -190,3 +193,14 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 
 </body>
 </html>
+
+<script>
+  $(document).ready(function(){
+  
+  $('#validate_form').parsley();
+  
+    
+    
+  });
+  
+  </script>
