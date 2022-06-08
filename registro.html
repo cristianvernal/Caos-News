@@ -89,11 +89,11 @@
     </div>
     <div class="col-md-4">
         <label for="numerocelular" class="form-label">Número Teléfono:</label>
-        <input type="text" class="form-control" id="numerocelular" placeholder="+569" data-parsley-type="number" data-parsley-trigger="keyup">
+        <input type="text" class="form-control" id="numerocelular" placeholder="+569" required data-parsley-type="number" data-parsley-trigger="keyup">
     </div>
     <div class="col-md-4">
       <label for="Rut" class="form-label">Rut:</label>
-      <input type="text" class="form-control" id="Rut" placeholder="Ingrese rut">
+      <input type="text" class="form-control" id="Rut" placeholder="Ingrese rut" required data-parsley-pattern="^[0-9]+[-|‐]{1}[0-9kK]{1}$" data-parsley-trigger="keyup">
   </div>
     <div class="col-md-4">
         <label for="Contraseña" class="form-label">Contraseña:</label>
@@ -199,8 +199,7 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
   
   $('#validate_form').parsley();
   
-    
-    
-  });
+
   
+  })
   </script>

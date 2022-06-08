@@ -28,3 +28,5 @@ Parsley.addMessages('es', {
   });
   
   Parsley.setLocale('es');
+
+  
