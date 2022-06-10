@@ -12,6 +12,11 @@
     min-height: 30vh;
 }
 
+.tarjeta-horoscopo{
+  
+    margin-top: 20px;
+}
+
 
 .noticia{
   transition: 0.5s;
@@ -161,10 +166,11 @@
   padding: 10px;
 }
 
-.c-hr{
-  border-radius: 30px;
+
+.tarjeta-horoscopo{
   background-color: rgb(37, 34, 34);
- 
+  border-radius: 30px;
+  
 }
 
 .img-periodista{
@@ -181,13 +187,6 @@
   
 }
 
-/*.navbar{
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  right: 0;
-  top: 0;
-}*/
 
 element.style {
   display: block;
